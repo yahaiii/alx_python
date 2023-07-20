@@ -2,7 +2,7 @@
 
 This repository contains Python scripts developed as part of the ALX iSWE (ALX Software Engineering) program.
 
-## Getting Started
+## Getting Started 
 
 To get started with these Python scripts, follow the steps below:
 
