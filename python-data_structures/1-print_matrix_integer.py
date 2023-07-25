@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 def print_matrix_integer(matrix=[[]]):
+    # Check if the matrix is empty
+    if not matrix:
+        print()
+        return
+
     # Loop through each row in the matrix
     for row in matrix:
         # Loop through each element in the row
@@ -9,3 +14,4 @@ def print_matrix_integer(matrix=[[]]):
         
         # Move to the next line after printing all elements in the row
         print()
+
