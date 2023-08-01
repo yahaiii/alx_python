@@ -1,4 +1,6 @@
 """
+My Square Class
+
 This module contains the Square class.
 
 The Square class represents a square with a specified size. It has a private instance attribute __size, which stores the size of the square.
@@ -17,6 +19,16 @@ Raises:
 
 
 class Square:
+    """
+    A class that represents a square.
+
+    Attributes:
+        __size (int): The size of the square.
+    
+    Methods:
+        __init__(self, size): Initializes a Square object with the given size.
+    """
+    
     def __init__(self, size=0):
         """
         Initialize a Square object.

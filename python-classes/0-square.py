@@ -10,18 +10,9 @@ Attributes:
 
 Methods:
     __init__(self, size): Constructor method to initialize the Square object with a given size.
-    area(self): Calculate and return the area of the square.
-    perimeter(self): Calculate and return the perimeter of the square.
-    __str__(self): Return a string representation of the Square object.
 
 Example:
     # >>> square1 = Square(5)
-    # >>> print(square1.area())
-    25
-    # >>> print(square1.perimeter())
-    20
-    # >>> print(square1)
-    Square with size 5
 
 Note:
     This implementation of the Square class does not perform type or value validation on the 'size' attribute.
