@@ -4,6 +4,9 @@ class Square:
 
     Attributes:
         __size (int): The size of the square.
+    
+    Methods:
+        __init__(self, size): Initializes a Square object with the given size.
     """
 
     def __init__(self, size):
