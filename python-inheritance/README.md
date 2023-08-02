@@ -1,5 +1,5 @@
 # Python Inheritance Tasks
-This repository contains the solutions for the Python Inheritance tasks for the ALX iSWE program. Each task is provided in a separate file, and the directory structure is organized as follows:
+This repository contains the solutions for the Python Inheritance tasks for the ALX iSWE program. Each task is provided in a separate file with its accompanying test case file, and the directory structure is organized as follows:
 
 
 ```
@@ -91,9 +91,9 @@ Write a class Square that inherits from Rectangle (7-rectangle.py):
 
 
 ## How to Use
-To run any specific task, simply execute the corresponding Python file. For example, to run Task 1, use the following command:
+To run any specific task, simply execute the corresponding Python file. For example, to run `0-is_same_class.py`, use the following command:
 
-`python task_1.py`
+`python3 0-is_same_class.py`
 
 Make sure you have Python installed on your system.
 
