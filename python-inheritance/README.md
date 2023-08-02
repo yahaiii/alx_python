@@ -5,12 +5,24 @@ This repository contains the solutions for the Python Inheritance tasks for the 
 ```
 python-inheritance/
 │
-├── task_1.py
-├── task_2.py
-├── task_3.py
-├── ...
-├── task_n.py
-│
+├── 0-is_same_class.py
+├── 0-main.py
+├── 1-is_kind_of_class.py
+├── 1-main.py
+├── 2-inherits_from.py
+├── 2-main.py
+├── 3-base_geometry.py
+├── 3-main.py
+├── 4-base_geometry.py
+├── 4-main.py
+├── 5-base_geometry.py
+├── 5-main.py
+├── 6-rectangle.py
+├── 6-main.py
+├── 7-rectangle.py
+├── 7-main.py
+├── 8-square.py
+├── 8-main.py
 ├── README.md
 ```
 ## Task Descriptions
