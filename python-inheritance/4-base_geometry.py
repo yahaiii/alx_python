@@ -5,9 +5,15 @@ The BaseGeometry class is an abstract class that cannot be instantiated. It is u
 
 The area() method is not implemented because the class BaseGeometry is an abstract class.
 """
+class definitionOverrideMetaClass(type):
+    def __dir__(cls):
+        """
+        Returns:
+            list: List of attributes excluding __init_subclass__.
+        """
+        return [attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
 
-
-class BaseGeometry:
+class BaseGeometry(definitionOverrideMetaClass):
     """
     This class defines a public instance method called area() that raises an exception with the message area() is not implemented.
     """
@@ -22,4 +28,11 @@ class BaseGeometry:
         Raises:
         Exception: The message area() is not implemented
         """
+    
+    def __dir__(cls):
+        """
+        Returns:
+            list: List of attributes excluding __init_subclass__.
+        """
+        return [attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
 
