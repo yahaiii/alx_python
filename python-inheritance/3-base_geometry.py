@@ -8,12 +8,13 @@ Classes:
 """
 
 class definitionOverrideMetaClass(type):
-      def __dir__(cls):
+    def __dir__(cls):
         """
         Returns:
             list: List of attributes excluding __init_subclass__.
         """
         return [attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
+      
 
 
 class BaseGeometry(metaclass=definitionOverrideMetaClass):
@@ -21,4 +22,10 @@ class BaseGeometry(metaclass=definitionOverrideMetaClass):
     This class serves as the base for other geometry-related classes.
     """
     pass
+    def __dir__(cls):
+        """
+        Returns:
+            list: List of attributes excluding __init_subclass__.
+        """
+        return [attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
 
