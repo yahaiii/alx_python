@@ -7,20 +7,18 @@ Classes:
     BaseGeometry: A base class for other geometry-related classes.
 """
 
+class definitionOverrideMetaClass(type):
+      def __dir__(cls):
+        """
+        Returns:
+            list: List of attributes excluding __init_subclass__.
+        """
+        return [attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
 
-class BaseGeometry:
+
+class BaseGeometry(metaclass=definitionOverrideMetaClass):
     """
     This class serves as the base for other geometry-related classes.
     """
     pass
 
-def dir(self):
-        """
-        Returns:
-            list: List of attributes excluding __init_subclass__.
-        """
-        # Get the list of attributes of the class (excluding __init_subclass__)
-        attributes = super().__dir__()
-        # Remove __init_subclass__ from the list of attributes.
-        new_attributes = [attribute for attribute in attributes if attribute != "__init_subclass__"]
-        return new_attributes
