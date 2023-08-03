@@ -6,7 +6,6 @@ A function that checks if an object is an instance of a class that inherited
 
 """
 
-
 def inherits_from(obj, a_class):
     """
     Check if the object is an instance of a class that inherited (directly or indirectly)
@@ -17,7 +16,6 @@ def inherits_from(obj, a_class):
         a_class: The class to 
     """
 
-    
     return issubclass(type(obj), a_class) and type(obj) is not a_class
     """
     Returns:
