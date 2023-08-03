@@ -5,7 +5,7 @@ This module defines a function that checks if an object is an instance of a give
 
 Functions:
     is_kind_of_class(obj, a_class): Check if the object is an instance of, or if the object is an instance
-                                    of a class that inherited from, the specified class.
+    of a class that inherited from, the specified class.
 
 Example:
     is_kind_of_class(5, int)  # Output: True
@@ -28,12 +28,6 @@ def is_kind_of_class(obj, a_class):
     """
     return isinstance(obj, a_class)
     """
-    Check if an object is an instance of the specified class.
-
-    Args:
-        obj (object): The object to be checked.
-        a_class (type): The class to compare against.
-
     Returns:
         bool: True if the object is an instance of the specified class; otherwise, False.
     """
