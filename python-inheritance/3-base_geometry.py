@@ -14,13 +14,13 @@ class BaseGeometry:
     """
     pass
 
-def __dir__(self):
+def dir(self):
         """
         Returns:
             list: List of attributes excluding __init_subclass__.
         """
         # Get the list of attributes of the class (excluding __init_subclass__)
-        attributes = [attr for attr in dir(type(self)) if attr != '__init_subclass__']
-
-        # Return the new list of attributes
-        return attributes
+        attributes = super().__dir__()
+        # Remove __init_subclass__ from the list of attributes.
+        new_attributes = [attribute for attribute in attributes if attribute != "__init_subclass__"]
+        return new_attributes
