@@ -5,6 +5,19 @@ The Rectangle class inherits from the BaseGeometry class. It has two private att
 
 The Rectangle class has an area() method that calculates the area of the rectangle.
 """
+
+class definitionOverrideMetaClass(type):
+    """def __new__(cls, name, bases, attrs):
+        # Customize the class creation process here
+        return super().__new__(cls, name, bases, attrs)"""
+
+    def __dir__(cls):
+        """
+        Returns:
+            list: List of attributes excluding __init_subclass__.
+        """
+        return [attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
+    
 BaseGeometry = __import__('5-base_geometry').BaseGeometry
 
 class Rectangle(BaseGeometry):
@@ -58,3 +71,10 @@ class Rectangle(BaseGeometry):
         elif name == "height" and not isinstance(object.__getattribute__(self, "_height"), int):
             raise TypeError("height must be an integer")
         return super().__getattribute__(name)
+
+    def __dir__(cls):
+        """
+        Returns:
+            list: List of attributes excluding __init_subclass__.
+        """
+        return [attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
