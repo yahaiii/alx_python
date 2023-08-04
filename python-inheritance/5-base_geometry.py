@@ -3,11 +3,23 @@ This module defines the BaseGeometry class.
 
 The BaseGeometry class is an abstract class that cannot be instantiated. It is used as a base class for other classes that will implement the area() method.
 
-The integer_validator() method validates the value. It assumes that the name is always a string. If the value is not an integer, it raises a TypeError exception with the message <name> must be an integer. If the value is less or equal to 0, it raises a ValueError exception with the message <name> must be greater than 0.
+The area() method is not implemented because the class BaseGeometry is an abstract class.
 """
 
 
-class BaseGeometry:
+class definitionOverrideMetaClass(type):
+    def __new__(cls, name, bases, attrs):
+        # Customize the class creation process here
+        return super().__new__(cls, name, bases, attrs)
+
+    def __dir__(cls):
+        """
+        Returns:
+            list: List of attributes excluding __init_subclass__.
+        """
+        return [attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
+
+class BaseGeometry(definitionOverrideMetaClass('BaseGeometry', (), {})):
     """
     This class defines two public instance methods:
 
@@ -62,4 +74,11 @@ class BaseGeometry:
             raise TypeError("{} must be an integer".format(name))
         elif value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
+        
+    def __dir__(cls):
+        """
+        Returns:
+            list: List of attributes excluding __init_subclass__.
+        """
+        return [attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
 
