@@ -1,3 +1,12 @@
+"""
+This module defines the BaseGeometry class.
+
+The BaseGeometry class is an abstract class that cannot be instantiated. It is used as a base class for other classes that will implement the area() method.
+
+The area() method is not implemented because the class BaseGeometry is an abstract class.
+"""
+
+
 class definitionOverrideMetaClass(type):
     def __new__(cls, name, bases, attrs):
         # Customize the class creation process here
