@@ -1,7 +1,7 @@
 """
 This module defines the Square class.
 
-The Square class inherits from the Rectangle class. 
+The Square class inherits from the Rectangle class.
 It has one private attribute: size.
 
 The Square class has an area() method that calculates its area.
@@ -23,7 +23,6 @@ class DefinitionOverrideMetaClass(type):
  
 Rectangle = __import__('7-rectangle').Rectangle
 
-
 class Square(Rectangle):
     """
     This class defines a rectangle.
@@ -41,7 +40,6 @@ class Square(Rectangle):
         ValueError: If the value of size is less than or equal to 0.
     """
 
-
     def __init__(self, size):
         """
         Initializes a new square.
@@ -56,7 +54,6 @@ class Square(Rectangle):
         self.integer_validator("size", size)
         self._size = size
 
-
     def area(self):
         """
         Calculates the area of the rectangle.
@@ -65,7 +62,6 @@ class Square(Rectangle):
             int: The area of the rectangle.
         """
         return self._size * self._size
-
 
     def __str__(self):
         """
@@ -76,10 +72,10 @@ class Square(Rectangle):
         """
         return "[Rectangle] {}/{}".format(self._size, self._size)
 
-
     def __dir__(cls):
         """
         Returns:
             list: List of attributes excluding __init_subclass__.
         """
-        return [attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
+        return [attribute for attribute in 
+                super().__dir__() if attribute != '__init_subclass__']
