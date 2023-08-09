@@ -78,7 +78,7 @@ class Rectangle(Base):
     def y(self, value):
         """Set the y-coordinate of the rectangle."""
         if not isinstance(value, int):
-            raise TypeError("y is not an integer")
+            raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
