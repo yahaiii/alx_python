@@ -1,4 +1,4 @@
-"""A script that lists all states from the database"""
+""" script that lists all states with a name starting with N """
 
 
 import sys
@@ -15,10 +15,11 @@ if __name__ == "__main__":
         user=username,
         passwd=password,
         db=database
-        )
+    )
+
     cur = db.cursor()
 
-    query = "SELECT * FROM states ORDER BY id ASC"
+    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
 
     cur.execute(query)
 
