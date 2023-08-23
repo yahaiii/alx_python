@@ -27,7 +27,7 @@ if __name__ == "__main__":
     ORDER BY id ASC
     """
 
-    cur.execute(query, (state))
+    cur.execute(query, (state,))
 
     rows = cur.fetchall()
     for row in rows:
