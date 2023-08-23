@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    query = "SELECT * FROM cities ORDER BY id ASC"
+    query = "SELECT id, state_id, name FROM cities ORDER BY id ASC"
 
     cur.execute(query)
 
