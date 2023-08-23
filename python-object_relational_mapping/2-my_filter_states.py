@@ -1,4 +1,4 @@
-"""that takes in an argument and displays all values in states table where name matches the argument"""
+"""displays all values in states table where name matches an argument"""
 
 
 import sys
@@ -20,7 +20,12 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    query = "SELECT * FROM states WHERE name LIKE '{}' ORDER BY id ASC".format(arg)
+    query = """
+    SELECT * 
+    FROM states 
+    WHERE name 
+    LIKE '{}' 
+    ORDER BY id ASC""".format(arg)
 
     cur.execute(query)
 
