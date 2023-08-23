@@ -21,10 +21,10 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     query = """
-    SELECT * 
-    FROM states 
-    WHERE name 
-    LIKE BINARY '{}' 
+    SELECT *
+    FROM states
+    WHERE name
+    LIKE BINARY '{}'
     ORDER BY id ASC
     """.format(arg)
 
