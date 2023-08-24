@@ -18,7 +18,6 @@ class State(Base):
     """
     Represents a State table in the database.
     
-    This class inherits from SQLAlchemy's declarative base class and maps to the 'states' table.
     It defines columns for 'id' and 'name'.
     """
     __tablename__ = 'states'
