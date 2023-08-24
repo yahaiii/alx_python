@@ -30,8 +30,8 @@ if __name__ == "__main__":
     cur.execute(query, (state,))
 
     rows = cur.fetchall()
-    for row in rows:
-        print(row[0], end=", ")
+    city_names = [row[0] for row in rows]
+    print(", ".join(city_names))
 
     cur.close()
     db.close()
