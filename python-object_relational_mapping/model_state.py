@@ -9,7 +9,6 @@ from sqlalchemy.ext.declarative import declarative_base
 
 # Create a database engine using SQLAlchemy's create_engine function
 # It connects to a MySQL database using the provided username, password, and database name
-engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
 
 # Create a base class for declarative models
 Base = declarative_base()
@@ -25,7 +24,3 @@ class State(Base):
     name = Column(String(128), nullable=False)
 
 if __name__ == "__main__":
-    """
-    This block creates the database tables when the script is run directly.
-    """
-    Base.metadata.create_all(engine)
