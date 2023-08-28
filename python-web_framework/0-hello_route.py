@@ -1,11 +1,5 @@
 """
 This is a simple Flask web application that implements routing using the Flask web framework.
-
-Usage:
-- Start the application by running this script.
-- Open your web browser and navigate to http://127.0.0.1:5000/ to see the greeting message. 
-- Navigate to different paths to see the result displayed in the web browser.
-
 """
 
 from flask import Flask
