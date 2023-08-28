@@ -58,8 +58,6 @@ def number(n):
     """
     if n.isinteger():
         return "{} is a number".format(n)
-    else:
-        return "{} is not an integer".format(n)
 
 if __name__ == "__main__":
     """
