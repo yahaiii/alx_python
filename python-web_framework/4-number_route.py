@@ -57,7 +57,7 @@ def number(n):
     Route handler for the root URL "/number/<n>". Displays a string.
     """
     if n.isinteger():
-        return "{} is a number".format(n)
+        return f"{str(n)} is a number"
 
 if __name__ == "__main__":
     """
