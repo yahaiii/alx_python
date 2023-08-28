@@ -1,10 +1,11 @@
 """
-This is a simple Flask web application that implements routing using the Flask web framework.
+This is a simple Flask web application.
 """
 
 from flask import Flask
 
 app = Flask(__name__)
+
 
 @app.route("/", strict_slashes=False)
 def hello_hbnb():
