@@ -67,19 +67,13 @@ def number_template(n):
     return render_template("5-number.html", number=n)
 
 
-@app.route("/number_odd_or_even/<n>")
+@app.route("/number_odd_or_even/<int:n>", strict_slashes=False)
 def number_odd_or_even(n):
     """
     Route handler for the root URL "/number_odd_or_even/<n>". Displays a string.
     """
-    try:
-        n = int(n)
-        if n % 2 == 0:
-            return render_template("6-number_odd_or_even.html", number=n, number_type="even")
-        else:
-            return render_template("6-number_odd_or_even.html", number=n, number_type="odd")
-    except ValueError:
-        return "404 Not Found", 404
+    number_type = "even" if n % 2 == 0 else "odd"
+    return render_template("6-number_odd_or_even.html", number=n, number_type=number_type)
 
 if __name__ == "__main__":
     """
