@@ -96,5 +96,9 @@ def number_odd_or_even(n):
         return render_template('6-number_odd_or_even.html', n=n, result='even')
     else:
         return render_template('6-number_odd_or_even.html', n=n, result='odd')
-    
-    
+
+if __name__ == "__main__":
+    """
+    Start the Flask web application.
+    """
+    app.run(host="0.0.0.0", port=5000)
