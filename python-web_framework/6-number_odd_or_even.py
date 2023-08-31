@@ -89,18 +89,14 @@ def number_template(n):
         return render_template('5-number.html', n=n), 404
     
 """define a route for the /number_odd_or_even/<n> URL and set strict_slashes to False"""
-@app.route('/number_odd_or_even/<n>', strict_slashes=False)
+@app.route('/number_odd_or_even/<int: n>', strict_slashes=False)
 def number_odd_or_even(n):
     """Check if n is an integer."""
-    try:
-        n = int(n)  # Convert n to an integer
-        """Determine if n is even or odd."""
-        if n % 2 == 0:
-            result = 'even'
-        else:
-            result = 'odd'
+    n = int(n)  # Convert n to an integer
+    """Determine if n is even or odd."""
+    if n % 2 == 0:
+        result = 'even'
+    else:
+        result = 'odd'
         """Render the 'number_odd_or_even.html' template and pass the value of n and the result to the template."""
-        return render_template('6-number_odd_or_even.html', n=n, result=result)
-    except ValueError:
-        """Return a 404 error if n is not an integer."""
-        return render_template('6-number_odd_or_even.html', n=n), 404
+    return render_template('6-number_odd_or_even.html', n=n, result=result)
