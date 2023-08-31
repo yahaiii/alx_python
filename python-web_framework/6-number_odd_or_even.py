@@ -67,17 +67,24 @@ def number_template(n):
     return render_template("5-number.html", number=n)
 
 
-@app.route("/number_odd_or_even/<n>")
-def number_odd_or_even(n):
+@app.route('/number_odd_or_even/<n>')
+def odd_or_even(n):
     """
-    Route handler for the root URL "/number_odd_or_even/<n>". Displays a string.
+    A route handler for the URL '/number_odd_or_even/<n>'.
+    It returns an HTML page with an H1 tag containing "Number: is even|odd".
+
+    Args:
+        n (int): The value of the number
+    
+    Returns:
+        str: HTML page with H1 tag.
     """
     try:
         n = int(n)
         if n % 2 == 0:
-            return render_template("6-number_odd_or_even.html", number=n, number_type="even")
+            return render_template('6-number_odd_or_even.html', n=n, status='even')
         else:
-            return render_template("6-number_odd_or_even.html", number=n, number_type="odd")
+            return render_template('6-number_odd_or_even.html', n=n, status='odd')
     except ValueError:
         return "404 Not Found", 404
 
