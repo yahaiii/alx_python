@@ -91,14 +91,13 @@ def number_template(n):
 """define a route for the /number_odd_or_even/<n> URL and set strict_slashes to False"""
 @app.route('/number_odd_or_even/<int:n>', strict_slashes=False)
 def number_odd_or_even(n):
-    """Check if n is an integer."""
+    """check if n is an integer"""
     if n % 2 == 0:
         return render_template('6-number_odd_or_even.html', n=n, result='even')
     else:
         return render_template('6-number_odd_or_even.html', n=n, result='odd')
+        """render the 'number_odd_or_even.html' template and pass the value of n and the result to the template"""
 
-if __name__ == "__main__":
-    """
-    Start the Flask web application.
-    """
-    app.run(host="0.0.0.0", port=5000)
+if __name__ == '__main__':
+    """Start the application and make it listen on IP address 0.0.0.0 and port 5000"""
+    app.run(host='0.0.0.0', port=5000)
