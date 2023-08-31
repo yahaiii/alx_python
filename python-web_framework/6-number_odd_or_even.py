@@ -93,9 +93,8 @@ def number_template(n):
 def number_odd_or_even(n):
     """Check if n is an integer."""
     if n % 2 == 0:
-        result = 'even'
+        return render_template('6-number_odd_or_even.html', n=n, result='even')
     else:
-        result = 'odd'
-    """Render the 'number_odd_or_even.html' template and pass the value of n and the result to the template."""
-    return render_template('6-number_odd_or_even.html', n=n, result=result)
+        return render_template('6-number_odd_or_even.html', n=n, result='odd')
+    
     
