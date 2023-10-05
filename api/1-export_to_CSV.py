@@ -24,10 +24,10 @@ def get_employee_todo_progress(employee_id):
     
     todos_data = todos_response.json()
 
-    # Create CSV file and write data
+     # Create CSV file and write data
     csv_filename = f"{employee_id}.csv"
     with open(csv_filename, mode='w', newline='') as csv_file:
-        writer = csv.writer(csv_file)
+        writer = csv.writer(csv_file, quoting=csv.QUOTE_MINIMAL, delimiter=',', quotechar='"')
         
         # Write task data
         for todo in todos_data:
