@@ -88,9 +88,7 @@ def export_employee_todo_progress_to_csv(employee_id):
     # Create CSV file and write data
     csv_filename = f"{employee_id}.csv"
     with open(csv_filename, mode='w', newline='') as csv_file:
-        # Write CSV header
-        csv_file.write('"USER_ID","USERNAME","TASK_COMPLETED_STATUS","TASK_TITLE"\n')
-
+        
         # Write task data with values enclosed in double quotes
         for todo in todos_data:
             csv_line = f'"{employee_id}","{employee_username}","{str(todo["completed"])}","{todo["title"]}"\n'
