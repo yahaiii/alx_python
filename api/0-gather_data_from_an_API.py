@@ -31,7 +31,7 @@ def get_employee_todo_progress(employee_id):
     progress = f"Employee {employee_name} is done with tasks ({completed_tasks}/{total_tasks}):"
     
     completed_task_titles = [todo['title'] for todo in todos_data if todo['completed']]
-    progress += '\n' + '\n'.join(["\t" + title for title in completed_task_titles])
+    progress += '\n' + '\n'.join(["\t " + title for title in completed_task_titles])
 
     return progress
 
