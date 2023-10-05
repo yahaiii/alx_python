@@ -24,7 +24,7 @@ def get_employee_todo_progress(employee_id):
     
     todos_data = todos_response.json()
 
-     # Create CSV file and write data
+    # Create CSV file and write data
     csv_filename = f"{employee_id}.csv"
     with open(csv_filename, mode='w', newline='') as csv_file:
         writer = csv.writer(csv_file, quoting=csv.QUOTE_MINIMAL, delimiter=',', quotechar='"')
@@ -32,10 +32,10 @@ def get_employee_todo_progress(employee_id):
         # Write task data
         for todo in todos_data:
             writer.writerow([
-                "'{}'".format(employee_id),
-                "'{}'".format(employee_username),
-                "'{}'".format(str(todo["completed"])),
-                "'{}'".format(todo["title"])
+                f'"{employee_id}"',
+                f'"{employee_username}"',
+                f'"{str(todo["completed"])}"',
+                f'"{todo["title"]}"'
             ])
 
 if __name__ == "__main__":
