@@ -27,14 +27,21 @@ def get_employee_todo_progress(employee_id):
     total_tasks = len(todos_data)
     completed_tasks = sum(1 for todo in todos_data if todo['completed'])
 
-    # Display progress
-    print(f"Employee {employee_name} is done with tasks ({completed_tasks}/{total_tasks}):")
+    # Format and return progress as a string
+    progress = f"Employee {employee_name} is done with tasks ({completed_tasks}/{total_tasks}):"
     
-    # Display completed task titles
-    for todo in todos_data:
-        if todo['completed']:
-            print(f"\t{todo['title']}")
+    completed_task_titles = [todo['title'] for todo in todos_data if todo['completed']]
+    progress += '\n' + '\n'.join(["\t" + title for title in completed_task_titles])
+
+    return progress
 
 if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python script.py <employee_id>")
+        sys.exit(1)
+
     employee_id = int(sys.argv[1])
-    get_employee_todo_progress(employee_id)
+    progress = get_employee_todo_progress(employee_id)
+    
+    # Print the progress string to standard output
+    print(progress)
