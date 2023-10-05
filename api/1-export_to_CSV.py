@@ -88,10 +88,12 @@ def export_employee_todo_progress_to_csv(employee_id):
     # Create CSV file and write data
     csv_filename = f"{employee_id}.csv"
     with open(csv_filename, mode='w', newline='') as csv_file:
-        
+
         # Write task data with values enclosed in double quotes
-        for todo in todos_data:
-            csv_line = f'"{employee_id}","{employee_username}","{str(todo["completed"])}","{todo["title"]}"\n'
+        for index, todo in enumerate(todos_data):
+            csv_line = f'"{employee_id}","{employee_username}","{str(todo["completed"])}","{todo["title"]}"'
+            if index < len(todos_data) - 1:  # Check if it's not the last iteration
+                csv_line += '\n'
             csv_file.write(csv_line)
 
 if __name__ == "__main__":
