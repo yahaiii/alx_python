@@ -38,10 +38,10 @@ def get_employee_todo_progress(employee_id):
         # Write task data
         for todo in todos_data:
             writer.writerow([
-                f'"{employee_id}"',
-                f'"{employee_username}"',
-                f'"{str(todo["completed"])}"',
-                f'"{todo["title"]}"'
+                f'{employee_id}',
+                f'{employee_username}',
+                f'{str(todo["completed"])}',
+                f'{todo["title"]}'
             ])
 
 if __name__ == "__main__":
