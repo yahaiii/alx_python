@@ -30,19 +30,14 @@ def get_employee_todo_progress(employee_id):
     
     todos_data = todos_response.json()
 
-    # Create CSV file and write data
-    csv_filename = f"{employee_id}.csv"
-    with open(csv_filename, mode='w', newline='') as csv_file:
-        writer = csv.writer(csv_file, quoting=csv.QUOTE_MINIMAL, delimiter=',', quotechar='"')
-        
-        # Write task data
+    # Export TODO list data to CSV file
+    filename = f"{employee_id}.csv"
+    with open(filename, "w", newline="") as csvfile:
+        writer = csv.writer(csvfile, quotechar='"', quoting=csv.QUOTE_ALL)
+
         for todo in todos_data:
-            writer.writerow([
-                f'{employee_id}',
-                f'{employee_username}',
-                f'{str(todo["completed"])}',
-                f'{todo["title"]}'
-            ])
+            task_completed = "True" if todo["completed"] else "False"
+            writer.writerow([employee_id, employee_username,task_completed, todo["title"]])
 
 if __name__ == "__main__":
     employee_id = int(sys.argv[1])
