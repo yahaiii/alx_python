@@ -12,7 +12,7 @@ def get_employee_todo_progress(employee_id):
         return
     
     employee_data = employee_response.json()
-    employee_name = employee_data['name']
+    employee_username = employee_data['username']
 
     # Fetch employee's TODO list
     todos_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
@@ -33,7 +33,7 @@ def get_employee_todo_progress(employee_id):
         for todo in todos_data:
             writer.writerow([
                 "'{}'".format(employee_id),
-                "'{}'".format(employee_name),
+                "'{}'".format(employee_username),
                 "'{}'".format(str(todo["completed"])),
                 "'{}'".format(todo["title"])
             ])
