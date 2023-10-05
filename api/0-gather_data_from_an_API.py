@@ -36,10 +36,6 @@ def get_employee_todo_progress(employee_id):
     return progress
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python script.py <employee_id>")
-        sys.exit(1)
-
     employee_id = int(sys.argv[1])
     progress = get_employee_todo_progress(employee_id)
     
